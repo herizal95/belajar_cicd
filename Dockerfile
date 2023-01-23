@@ -1,10 +1,9 @@
-FROM golang:1.17-alpine
+FROM golang:1.19
 
 WORKDIR /app
 
 COPY go.mod ./
 COPY *.go ./
-COPY static ./static
 
 RUN go build -o /belajar-cicd
 
