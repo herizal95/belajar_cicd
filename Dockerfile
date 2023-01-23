@@ -7,6 +7,6 @@ COPY *.go ./
 
 RUN go build -o /belajar-cicd
 
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["/belajar-cicd"]
