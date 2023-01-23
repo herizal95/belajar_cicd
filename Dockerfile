@@ -1,12 +1,17 @@
-FROM golang:1.19
+# Use an official Go runtime as the base image
+FROM golang:latest
 
+# Set the working directory in the container
 WORKDIR /app
 
-COPY go.mod ./
-COPY *.go ./
+# Copy the source code from the host to the container
+COPY . .
 
-RUN go build -o /belajar_cicd
+# Build the application
+RUN go build -o main .
 
+# Expose port 8080 to the host
 EXPOSE 8080
 
-CMD ["/belajar_cicd"]
+# Run the application
+CMD ["./main"]
